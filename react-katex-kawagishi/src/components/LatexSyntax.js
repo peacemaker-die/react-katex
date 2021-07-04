@@ -91,60 +91,6 @@ const LatexSyntax = () => {
                     <td><InlineMath math={'\\eta'}/></td>
                     <td>\eta</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td className="borderright"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
             </table>
             <hr/>
             <BlockMath math={'a^{b}=c'}/>
@@ -192,11 +138,109 @@ const LatexSyntax = () => {
                 math={'(a+b){^n}=\\;_{n}\\mathrm{C}{_0}{a}^{n}{b}^{0}+{_n}\\mathrm{C}_{1}a^{n-1}b^{1}+\\cdots+{_n}\\mathrm{C}_{n-2}a^{2}b^{n-2}+{_n}\\mathrm{C}_{n-1}a^{1}b^{n-1}+{_n}\\mathrm{C}_{n}a^{0}b^{n}'}/>
             </p>
             <p>
-                <InlineMath math={'=\\displaystyle\\sum_{k=0}^{n}{_n}\\mathrm{C}{_k}a^{n-k}b^{k}'}/>
+                <InlineMath
+                    math={'=\\displaystyle\\sum_{k=0}^{n}{_n}\\mathrm{C}{_k}a^{n-k}b^{k}'}/>
             </p>
             <hr/>
             <code>部分分数分解</code>
-            
+            <p>
+                <InlineMath
+                    math={'\\displaystyle\\sum_{k=1}^{n}\\;\\dfrac{1}{k(k+1)}=\\sum_{k=1}^{n}\\left(\\dfrac{1}{k}-\\dfrac{1}{k+1}\\right)'}/>
+            </p>
+            <p>
+                <InlineMath
+                    math={'=\\left(1-\\bcancel\\dfrac{1}{2}\\right)+\\left(\\bcancel\\dfrac{1}{2}-\\bcancel\\dfrac{1}{3}\\right)'}/>
+                <InlineMath
+                    math={'+\\left(\\bcancel\\dfrac{1}{3}-\\bcancel\\dfrac{1}{4}\\right)'}/>
+                <InlineMath math={'+\\cdots+'}/>
+                <InlineMath
+                    math={'\\left(\\bcancel\\dfrac{1}{n-1}-\\bcancel\\dfrac{1}{n}\\right)'}/>
+                <InlineMath
+                    math={'+\\left(\\bcancel\\dfrac{1}{n}-\\bcancel\\dfrac{1}{n+1}\\right)'}/>
+            </p>
+            <p>
+                <InlineMath math={'=1-\\dfrac{1}{n+1}'}/>
+            </p>
+            <hr/>
+            <code>関数と極限</code>
+            <p>
+                <InlineMath
+                    math={'\\displaystyle\\lim_{x\\to 0}\\dfrac{sin x}{x}=\\lim_{x\\to0}\\dfrac{sin x}{x}=1'}/>
+            </p>
+            <p>
+                <InlineMath math={
+                    '\\displaystyle\\lim_{x\\to\\infty}=a^{x}=' +
+                    '\\left\\{' +
+                    '\\begin{array}{lc}' +
+                    '\\infty & (1<a)' +
+                    '\\\\\\\\' +
+                    '0 & (0<a<1)' +
+                    '\\end{array}' +
+                    '\\right.'
+                }/>
+                <InlineMath math={
+                    '\\hspace{10mm} \\displaystyle\\lim_{x \\to -\\infty}a^{x}=' +
+                    '\\left \\{' +
+                    '\\begin{array}{lc}' +
+                    '0 & (1 < a)' +
+                    '\\\\\\\\' +
+                    '\\infty &(0<a<1)' +
+                    '\\end{array}' +
+                    '\\right.'
+                }/>
+            </p>
+            <p>
+                <InlineMath
+                    math={'\\displaystyle \\lim_{x \\to \\infty}log_{a}{x}=' +
+                    '\\left \\{' +
+                    '\\begin{array}{lc}' +
+                    '\\infty & (1<a)' +
+                    '\\\\\\\\' +
+                    '0 & (0<a<1)' +
+                    '\\end{array}' +
+                    '\\right.'
+                    }/>
+                <InlineMath
+                    math={'\\hspace{10mm} \\displaystyle \\lim_{x \\to +0}' +
+                    '\\left \\{' +
+                    '\\begin{array}{lc}' +
+                    '-\\infty & (1<a)' +
+                    '\\\\\\\\' +
+                    '\\infty & (0 < a < 1)' +
+                    '\\end{array}' +
+                    '\\right.'
+                    }/>
+            </p>
+            <hr/>
+            <code>シュワルツの不等式</code>
+            <p>
+                <InlineMath math={'f(x),g(x)'}/>
+                はともに区間
+                <InlineMath math={'a\\leqq{x}\\leqq{b}\\hspace{1mm}(a<b)'}/>
+                で定義された連続関数である。このとき次の不等式が成立する。
+            </p>
+            <BlockMath math={'\\int^{b}_{a}f(x)g(x)dx' +
+            '\\leqq' +
+            ' \\left(' +
+            ' \\int^{b}_{a} \\{f(x) \\}^2' +
+            '\\right)' +
+            '\\left(' +
+            '\\int^{b}_{a}\\{g(x)\\}^2' +
+            '\\right)'
+            }/>
+            <p>
+                等号成立は、区間
+            <InlineMath math={'[a,b]'}/>
+                で常に
+                <InlineMath math={'f(x)=0'}/>
+                または
+                <InlineMath math={'g(x)=0'}/>
+                または
+                <InlineMath math={'f(x)=kg(x)'}/>
+                となる定数
+                <InlineMath math={'k'}/>
+                が存在するとき。
+            </p>
         </main>
     )
 };
